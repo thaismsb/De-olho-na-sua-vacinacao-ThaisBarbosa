@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "dbd9d5f6-2ec4-4f22-895e-fb8db76b91ab",
+		"name": "De olho na sua vacinação",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cadastrar Vacina",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/vaccines",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"vaccines"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retornar todas as vacinas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/vaccines",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"vaccines"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retornar uma vacina específica",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/vaccines/id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"vaccines",
+						"id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Marcar se tomou vacina",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"vaccinated\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/vaccines/7/vaccinated",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"vaccines",
+						"7",
+						"vaccinated"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
