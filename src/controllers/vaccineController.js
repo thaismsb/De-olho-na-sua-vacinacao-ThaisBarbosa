@@ -59,9 +59,9 @@ const deleteVaccine = async (req, res) => {
     try {
         const rowsDeleted = await Vaccine.destroy({ where: { id: vaccineId} });
         if (rowsDeleted) {
-            res.status(200).send({ message: `${rowsDeleted} vacina deletada com sucesso!` })
+            res.status(200).send({ message: `Vacina de id ${vaccineId} deletada com sucesso!` })
         } else {
-            res.status(404).send({ message: `Vavina com id ${doctorId} não foi encontrada.` })
+            res.status(404).send({ message: `Vacina com id ${vaccineId} não foi encontrada.` })
         }
     } catch (error) {
         res.status(500).send({ message: error.message })
