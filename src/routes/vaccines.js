@@ -10,5 +10,8 @@ router.get("/", controller.getAllVaccines);
 router.get("/:id", controller.getVaccine);
 //Marcar se tomou vacina
 router.patch("/:id/vaccinated", controller.updateVaccineStatus);
+//Deletar uma vacina 
+router.delete("/:id", controller.deleteVaccine);
+
 
 module.exports = router;
