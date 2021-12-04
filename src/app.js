@@ -18,15 +18,15 @@ app.use(function (req, res, next) {
     
 })
 
-// app.options("/*", (req, res) => {
-//     res.header("Access-Control-Allow-Origin", "*")
-//     res.header("Access-Control-Allow-Headers")
-//     res.header(
-//         "Access-Control-Allow-Methods",
-//         "PUT,POST,GET,DELETE,OPTIONS,PATCH"
-//     );
-//     res.send("send some thing whatever")
-// })
+app.options("/*", (req, res) => {
+    res.header("Access-Control-Allow-Origin", "*")
+    res.header("Access-Control-Allow-Headers")
+    res.header(
+        "Access-Control-Allow-Methods",
+        "PUT,POST,GET,DELETE,OPTIONS,PATCH"
+    );
+    res.send("send some thing whatever")
+})
 
 
 app.use("/", index)
