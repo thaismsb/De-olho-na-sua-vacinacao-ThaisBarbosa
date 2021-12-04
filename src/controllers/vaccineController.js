@@ -68,11 +68,22 @@ const deleteVaccine = async (req, res) => {
     }
 }
 
+const deleteAllVaccines = async (req, res) => {
+   
+    try {
+        const rowsDeleted = await Vaccine.destroy( {where: {Vaccine}, truncate: true});
+            res.status(200).send({ message: `Todas as vacinas foram deletadas com sucesso!` })
+    } catch (error) {
+        res.status(500).send({ message: error.message })
+    }
+}
+
 
 module.exports = {
     createVaccine,
     getAllVaccines,
     getVaccine,
     updateVaccineStatus,
-    deleteVaccine
+    deleteVaccine,
+    deleteAllVaccines
 }

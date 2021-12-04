@@ -12,6 +12,7 @@ router.get("/:id", controller.getVaccine);
 router.patch("/:id/vaccinated", controller.updateVaccineStatus);
 //Deletar uma vacina 
 router.delete("/:id", controller.deleteVaccine);
-
+//Deletar todas as vacinas
+router.delete("/", controller.deleteAllVaccines);
 
 module.exports = router;
