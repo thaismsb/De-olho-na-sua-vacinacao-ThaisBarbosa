@@ -78,6 +78,22 @@ const deleteAllVaccines = async (req, res) => {
     }
 }
 
+const updateVaccine = async (req, res) => {
+    const vaccineId = req.params.id;
+    const { name, expected_date, vaccinated } = req.body;
+    try {
+        const rowsUpdated = await Vaccine.update({ name, expected_date, vaccinated }, {
+            where: { id: vaccineId }
+        });
+        if (rowsUpdated && rowsUpdated > 0) {
+            res.status(200).send({ message: `A vacina de id ${vaccineId} foi atualizada com sucesso!` })
+        } else {
+            res.status(404).send({ message: `A vacina de id ${vaccineId} não foi encontrada.` })
+        }
+    } catch (error) {
+        res.status(500).send({ message: error.message })
+    }
+}
 
 module.exports = {
     createVaccine,
@@ -85,5 +101,6 @@ module.exports = {
     getVaccine,
     updateVaccineStatus,
     deleteVaccine,
-    deleteAllVaccines
+    deleteAllVaccines,
+    updateVaccine
 }
